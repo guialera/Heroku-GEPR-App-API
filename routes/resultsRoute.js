@@ -26,4 +26,16 @@ resultsRoute.get("/:electionYear", (req, res, next) => {
     })
 })
 
+//Get Results By State
+
+resultsRoute.get("/:state", (req, res, next) => {
+    ElectionResults.find({ state: req.params.state }, (err, results) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(results)
+    })
+})
+
 module.exports = resultsRoute
