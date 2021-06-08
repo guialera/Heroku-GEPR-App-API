@@ -7,8 +7,7 @@ const path = require("path")
 const port = process.env.PORT || 9000
 const secret = process.env.SECRET || "coffee house frosty coke"
 
-
-mongoose.connect("mongodb+srv://guialera:Guillermo1990!@cluster0.zlxrl.mongodb.net/gepr-database?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
