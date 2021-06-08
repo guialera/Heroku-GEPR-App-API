@@ -28,7 +28,7 @@ resultsRoute.get("/:electionYear", (req, res, next) => {
 
 //Get Results By State
 
-resultsRoute.get("/:state", (req, res, next) => {
+resultsRoute.get("/state/:state", (req, res, next) => {
     ElectionResults.find({ state: req.params.state }, (err, results) => {
         if (err) {
             res.status(500)
